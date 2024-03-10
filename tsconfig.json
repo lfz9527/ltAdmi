@@ -1,25 +1,46 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "module": "ESNext",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "preserve",
-
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "target": "esnext", // 将 ts 代码编译为 ECMAScript Next（最新版本）兼容的 JavaScript 代码。
+    "module": "esnext", // 指定使用最新的模块系统
+    "noEmit": true, // 是否生成输出文件
+    "moduleResolution": "node", // 指定 TypeScript 编译器在解析模块时采用的策略。这个选项影响着 TypeScript 在编译过程中如何定位和加载模块的文件路径。
+    "strict": true, // 启用所有严格类型检查选项
+    "forceConsistentCasingInFileNames": true, // 强制文件名和文件路径的大小写匹配
+    "allowSyntheticDefaultImports": true, // 将是否允许你在非 ES 模块或没有明确指定默认导出的模块中，使用默认导入语法（例如 import foo from 'bar'），并且会为这些情况生成一个合成的默认导出。
+    "strictFunctionTypes": false, // 严格函数类型检查
+    "jsx": "preserve", // 保留 JSX 代码
+    "baseUrl": ".", // "paths"是相对于"baseUrl"进行解析, "."根目录
+    "allowJs": true, // 允许导入 JavaScript 文件
+    "sourceMap": true, // 开启 sourceMap
+    "esModuleInterop": true, // 将会启用对 ES 模块和非 ES 模块之间互操作的支持。具体来说，它允许你在导入非 ES 模块时使用默认导出（default exports）的方式进行导入。
+    "resolveJsonModule": true, // 是否允许 TypeScript 直接导入 JSON 文件并将其解析为模块。
+    "noUnusedLocals": true, // 指定是否在编译过程中检测并报告未使用的局部变量。
+    "noUnusedParameters": true, // 指定是否在编译过程中检测并报告未使用的参数。
+    "experimentalDecorators": true, // 是否开启ts装饰器
+    "lib": ["dom", "esnext"], // 指定要包含在编译结果中的库。
+    "types": ["vite/client"], // 用于指定要包含的类型声明文件（.d.ts 文件）。
+    "typeRoots": ["./node_modules/@types/", "./types"], // 指定要包含的类型声明文件的基目录。
+    "incremental": true, // 是否启用增量编译,开启 TypeScript 的增量编译时，TypeScript 编译器会在每次编译时尝试重用之前编译过的信息，以便加快编译速度
+    "noImplicitAny": false, // 指定是否允许隐式的 any 类型。
+    "skipLibCheck": true, // 用于指定是否跳过库文件的类型检查。
+    "paths": {
+      // 配置模块解析的路径映射。当你使用模块导入语句（如 import 或 require）引入模块时，TypeScript 编译器需要根据模块名称来解析对应的文件路径。默认情况下，TypeScript 使用相对路径或基于 node_modules 目录的绝对路径来解析模块。
+      "@/*": ["src/*"],
+      "#/*": ["types/*"]
+    }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": [
+    // 要包含在编译过程中的源代码文件的路径模式
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "types/**/*.d.ts",
+    "types/**/*.ts",
+    "build/**/*.ts",
+    "build/**/*.d.ts",
+    "vite.config.ts"
+  ],
+  // 你可以指定项目的子项目或库之间的引用关系，以便在进行编译时能够按正确的顺序构建这些项目。
   "references": [{ "path": "./tsconfig.node.json" }]
 }

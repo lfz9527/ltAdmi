@@ -1,0 +1,19 @@
+root = true # 表示这是顶层的 .editorconfig 文件，会停止查找更多的 .editorconfig 文件。
+
+[*] # 表示适用于所有文件类型。
+charset=utf-8 # 定义文件字符集为 UTF-8。
+end_of_line=crlf # 定义换行符类型为 LF（Unix 风格）是告诉编辑器在保存文件时，使用 LF 作为换行符，这样可以确保文件符合 Unix 风格的换行符标准。这也有助于确保代码在不同操作系统上的一致性，避免因换行符类型不同而导致的格式问题。
+insert_final_newline=true # 用于指定在文件末尾插入一个空行
+indent_style=space # 用于指定代码缩进的风格或方式。tab：使用制表符进行代码缩进 space：使用空格进行代码缩进。
+indent_size=2 # 用于指定代码缩进的空格数或制表符宽度
+max_line_length = 100 # 用于指定最大行长度，超过该长度将被换行或提供警告
+
+[*.{yml,yaml,json}] # 表示对所有扩展名为 .yml、.yaml 和 .json 的文件应用相同的编辑器配置。
+indent_style = space
+indent_size = 2
+
+[*.md] # 表示对所有扩展名为 .md 的文件应用相同的编辑器配置。
+trim_trailing_whitespace = false
+
+[Makefile] # 表示针对 Makefile 文件的特定配置
+indent_style = tab
