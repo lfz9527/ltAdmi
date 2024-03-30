@@ -40,7 +40,5 @@
     "build/**/*.ts",
     "build/**/*.d.ts",
     "vite.config.ts"
-  ],
-  // 你可以指定项目的子项目或库之间的引用关系，以便在进行编译时能够按正确的顺序构建这些项目。
-  "references": [{ "path": "./tsconfig.node.json" }]
+  ]
 }

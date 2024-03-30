@@ -1,14 +1,20 @@
 import type { Router, RouteLocationNormalized } from 'vue-router'
-import router from '@/router'
+
+import { createStateGuard } from './stateGuard'
+import { createPermissionGuard } from './permissionGuard'
+import { createParamMenuGuard } from './paramMenuGuard'
 
 // 不要轻易更改创建顺序
-export function setupRouterGuard() {
+export function setupRouterGuard(router: Router) {
   createPageGuard(router)
-  createPageLoadingGuard()
-  createHttpGuard()
+  createPageLoadingGuard(router)
+  createHttpGuard(router)
   createScrollGuard(router)
-  createMessageGuard()
-  createProgressGuard()
+  createMessageGuard(router)
+  createProgressGuard(router)
+  createPermissionGuard(router)
+  createParamMenuGuard(router)
+  createStateGuard(router)
 }
 
 // 用于处理页面状态
@@ -27,10 +33,14 @@ const createPageGuard = (router: Router) => {
 }
 
 // @TODO 用于处理页面加载状态
-const createPageLoadingGuard = () => {}
+const createPageLoadingGuard = (router: Router) => {
+  router.beforeEach(() => {})
+}
 
 // @TODO 用于在路由切换时关闭当前页面以完成请求的接口
-const createHttpGuard = () => {}
+const createHttpGuard = (router: Router) => {
+  router.beforeEach(() => {})
+}
 
 // 路由切换回到顶部
 const createScrollGuard = (router: Router) => {
@@ -47,7 +57,11 @@ const createScrollGuard = (router: Router) => {
 }
 
 // @TODO 路由切换时关闭通知消息等实例
-export const createMessageGuard = () => {}
+export const createMessageGuard = (router: Router) => {
+  router.beforeEach(() => {})
+}
 
 // @TODO 页面顶部进度条
-export const createProgressGuard = () => {}
+export const createProgressGuard = (router: Router) => {
+  router.beforeEach(() => {})
+}
