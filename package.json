@@ -1,5 +1,5 @@
 {
-  "name": "ltadmin",
+  "name": "LTAdmin",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -10,6 +10,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "ant-design-vue": "4.x",
     "axios": "^1.6.7",
     "pinia": "^2.1.7",
     "vue": "^3.4.19",

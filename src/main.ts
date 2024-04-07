@@ -1,6 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
+import 'virtual:windi.css'
+
 import router, { setupRouter } from '@/router'
 import { setupRouterGuard } from '@/router/guard'
 import { setupStore } from '@/store'

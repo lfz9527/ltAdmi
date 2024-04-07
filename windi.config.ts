@@ -25,7 +25,7 @@ export default defineConfig({
  * 用于显示元素时的动画
  * @param maxOutput 输出越大，生成的css体积就越大
  */
-function createEnterPlugin(maxOutput) {
+function createEnterPlugin(maxOutput = 6) {
   const createCss = (index: number, d = 'x') => {
     const upd = d.toUpperCase()
     return {
