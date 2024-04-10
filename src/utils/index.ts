@@ -19,3 +19,5 @@ export const withInstall = <T extends CustomComponent>(component: T, alias?: str
   }
   return component as WithInstall<T>
 }
+
+export const noop = () => {}

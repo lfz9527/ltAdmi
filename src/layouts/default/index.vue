@@ -7,12 +7,11 @@
 <script setup lang="ts">
   import { computed } from 'vue'
   import { Layout } from 'ant-design-vue'
-
   import { useDesign } from '@/hooks/web/useDesign'
 
-  const Cls = useDesign('default-layout')
+  // import {createAsyncComponent} from '@/utils/factory/createAsyncComponent'
 
-  console.log('Cls', Cls)
+  const Cls = useDesign('default-layout') // itAdmin-default-layout
 
   // 布局动态添加类
   const layoutClass = computed(() => {
