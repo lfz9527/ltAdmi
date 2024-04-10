@@ -61,6 +61,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
     },
     server: {
       open: true, // 项目启动后，自动打开
+      port: 8088,
       //@TODO 代理
     },
   }
