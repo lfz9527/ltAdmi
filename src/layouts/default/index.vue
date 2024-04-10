@@ -1,5 +1,6 @@
 <template>
   <Layout :class="[layoutClass]">
+    <LayoutSideBar />
     <Layout :class="`${Cls.prefixCls}-main`"> </Layout>
   </Layout>
 </template>
@@ -8,6 +9,8 @@
   import { computed } from 'vue'
   import { Layout } from 'ant-design-vue'
   import { useDesign } from '@/hooks/web/useDesign'
+
+  import LayoutSideBar from '../sider/index.vue'
 
   // import {createAsyncComponent} from '@/utils/factory/createAsyncComponent'
 
