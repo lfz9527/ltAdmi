@@ -51,6 +51,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
     css: {
       preprocessorOptions: {
         less: {
+          additionalData: `@import (reference) "@/design/config.less";`,
           modifyVars: generateModifyVars(), // less 全局变量
           javascriptEnabled: true,
         },

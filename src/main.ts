@@ -1,7 +1,11 @@
+import 'ant-design-vue/dist/reset.css'
+import 'virtual:windi.css'
+import 'virtual:windi-base.css'
+import 'virtual:windi-components.css'
+import '@/design/index.less'
+
 import { createApp } from 'vue'
 import App from './App.vue'
-
-import 'virtual:windi.css'
 
 import router, { setupRouter } from '@/router'
 import { setupRouterGuard } from '@/router/guard'

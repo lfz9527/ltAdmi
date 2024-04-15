@@ -2,7 +2,7 @@
   <slot></slot>
 </template>
 <script lang="ts" setup>
-  import { toRefs, defineProps, withDefaults } from 'vue'
+  import { toRefs } from 'vue'
   import { prefixCls as pCls } from '@/setting/designSetting'
   import { createAppProviderContext } from './useAppContext'
 
@@ -17,5 +17,6 @@
   // 把 一个响应式对象转换成普通对象
   const { prefixCls } = toRefs(props)
 
+  // 创建应用上下文
   createAppProviderContext({ prefixCls })
 </script>

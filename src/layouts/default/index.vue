@@ -25,4 +25,21 @@
   })
 </script>
 
-<style scoped></style>
+<style lang="less">
+  @prefix-cls: ~'@{namespace}-default-layout';
+
+  .@{prefix-cls} {
+    display: flex;
+    width: 100%;
+    min-height: 100%;
+    background: @content-bg;
+    flex-direction: column;
+
+    > .ant-layout {
+      min-height: 100%;
+    }
+    &-main {
+      margin-left: 1px;
+    }
+  }
+</style>
